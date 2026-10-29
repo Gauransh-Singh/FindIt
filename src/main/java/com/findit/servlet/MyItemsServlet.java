@@ -1,0 +1,3 @@
+package com.findit.servlet;
+import com.findit.dao.ItemDAO;import javax.servlet.*;import javax.servlet.annotation.WebServlet;import javax.servlet.http.*;import java.io.*;import java.sql.SQLException;
+@WebServlet("/my-items") public class MyItemsServlet extends HttpServlet {protected void doGet(HttpServletRequest q,HttpServletResponse p)throws ServletException,IOException{HttpSession s=q.getSession(false);if(s==null||s.getAttribute("userId")==null){p.sendRedirect(q.getContextPath()+"/login");return;}try{q.setAttribute("items",new ItemDAO().list(null,null,((Number)s.getAttribute("userId")).intValue(),true));q.getRequestDispatcher("/WEB-INF/views/my-items.jsp").forward(q,p);}catch(SQLException e){throw new ServletException(e);}}}

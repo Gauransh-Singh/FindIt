@@ -1,0 +1,17 @@
+com\findit\servlet\ClaimServlet.class
+com\findit\dao\UserDAO.class
+com\findit\servlet\ItemsServlet.class
+com\findit\servlet\MyItemsServlet.class
+com\findit\servlet\HomeServlet.class
+com\findit\dao\ItemDAO.class
+com\findit\servlet\MatchesServlet.class
+com\findit\util\PasswordUtil.class
+com\findit\dao\UserDAO$User.class
+com\findit\servlet\AdminServlet.class
+com\findit\servlet\ClaimActionServlet.class
+com\findit\servlet\LoginServlet.class
+com\findit\util\DBConnection.class
+com\findit\servlet\RegisterServlet.class
+com\findit\servlet\ResolveServlet.class
+com\findit\servlet\LogoutServlet.class
+com\findit\servlet\ReportServlet.class

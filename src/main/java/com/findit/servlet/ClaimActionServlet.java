@@ -1,0 +1,3 @@
+package com.findit.servlet;
+import com.findit.dao.ItemDAO;import javax.servlet.*;import javax.servlet.annotation.WebServlet;import javax.servlet.http.*;import java.io.*;import java.sql.SQLException;
+@WebServlet("/claim-action") public class ClaimActionServlet extends HttpServlet {protected void doPost(HttpServletRequest q,HttpServletResponse p)throws ServletException,IOException{HttpSession s=q.getSession(false);if(s==null||!"ADMIN".equals(s.getAttribute("role"))){p.sendError(403);return;}try{new ItemDAO().updateClaim(Integer.parseInt(q.getParameter("claimId")),q.getParameter("status"));p.sendRedirect(q.getContextPath()+"/admin");}catch(SQLException|NumberFormatException e){throw new ServletException(e);}}}
